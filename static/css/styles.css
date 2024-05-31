@@ -1,0 +1,277 @@
+* {
+    color: #FFFFFF;
+}
+
+button:focus,
+button:active,
+button:focus:active {
+    outline: none;
+    box-shadow: none;
+}
+
+body {
+    margin: 0px;
+    background: linear-gradient(to bottom, #9da3a8, #4d5256);
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.navbar {
+    display: flex;
+    margin: 15px;
+    width: calc(100% - 30px);
+    background-color: #4d5256;
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.navbar-link {
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+.nav-first {
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+}
+
+.nav-after {
+    border-right: 1px solid #FFFFFF;
+}
+
+.navbar-link:hover {
+    background-color: #7d7276;
+    text-decoration: none;
+}
+
+.navbar-link h7 {
+    text-decoration: none;
+}
+
+
+.navbar-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.vertical-break {
+    width: 1px;
+    background-color: #FFFFFF;
+    height: 35px;
+}
+
+.vertical-break-bold {
+    width: 2px;
+    background-color: #FFFFFF;
+    height: 45px;
+    margin-left: 15px;
+    margin-right: 45px;
+}
+
+.light-dark {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.navbar a svg {
+    float: right;
+    width: 24px;
+    height: 24px;
+    fill: #FFFFFF;
+}
+
+.title-box {
+    margin-top: 95px;
+    padding: 15px;
+    background-color: rgba(225, 225, 225, 0.5);
+    border-radius: 20px;
+    max-width: 960px;
+}
+
+.contact-box {
+    border-radius: 20px;
+    background-color: #898989;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #898989;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #999999 transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+.has-scrollbar {
+    padding-top: 10px;
+}
+
+.has-scrollbar li {
+    margin-bottom: 5px;
+}
+
+.contact-links li {
+    background-color: #7d7276;
+    list-style-type: none;
+    margin-right: 15px;
+    margin-left: 5px;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.contact-links li a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.contact-links li a:hover span {
+    text-decoration: none;
+}
+
+.contact-links li:hover {
+    background-color: #4d5256;
+}
+
+.contact-links li a span svg, .contact-links li a span img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.banner-scroll {
+    width: 1000px;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.banner-imgs {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    margin: 0;
+    overflow: hidden;
+    width: 1000px;
+    height: 400px;
+    position: relative;
+}
+
+.banner-indicators {
+    position: relative;
+    display: flex;
+    padding: 0px;
+    flex-direction: row;
+    margin: 0px;
+    width: 100%;
+    height: 5%;
+    justify-content: flex-end;
+    align-items: center;
+    top: -20px;
+    padding-right: 10px;
+}
+
+.banner-imgs li {
+    list-style-type: none;
+    min-width: 1000px;
+    position: absolute;
+}
+
+.banner-indicators li {
+    list-style-type: none;
+    margin-right: 5px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+}
+
+.indicator-active {
+    background-color: #343434;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.segments {
+    padding-bottom: 15px;
+}
+
+.segment {
+    width: 100%;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+.image-group {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 60%;
+    max-width: 600px;
+}
+
+.image-group img {
+    width: 100%;
+    height: auto;
+}
+
+.image-scroll {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color: #4d5256;;
+}
+
+.image-scroll li {
+    list-style-type: none;
+}
+
+.image-scroll li img {
+    max-height: 30px;
+    width: auto;
+}
+
+.segment-text {
+    overflow-wrap: break-word;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: #4d5256;
+}
