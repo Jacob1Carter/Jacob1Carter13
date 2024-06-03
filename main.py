@@ -6,25 +6,7 @@ from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-carterapi_baseurl = "http://127.0.0.1:5000/"
-
-banners_url = "static/assets/banners/"
-images_url = "static/assets/images/"
-icons_url = "static/assets/icons/"
-
-
-def check_show_icons(segments):
-    for segment in segments:
-        if not os.path.exists(f"{icons_url}{segments[segment]['icon']}") or segments[segment]['icon'] == "":
-            return False
-    return True
-
-
-def check_show_banners(data):
-    for banner in data["banners"]:
-        if not os.path.exists(f"{banners_url}{data['banners'][banner]}"):
-            return False
-    return True
+carterapi_baseurl = "http://127.0.0.1:5001/"
 
 
 @app.route("/")
@@ -76,9 +58,6 @@ def index():
         segments=segments,
         show_icons=show_icons,
         show_banners=show_banners,
-        images_url=images_url,
-        banners_url=banners_url,
-        icons_url=icons_url,
         mode=mode,
         notmode=notmode,
     )
@@ -90,4 +69,4 @@ def favicon():
 
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", 5013)
+    app.run(host='127.0.0.1', port=5013)
