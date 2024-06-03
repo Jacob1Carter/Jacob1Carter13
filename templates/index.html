@@ -4,21 +4,26 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="static/css/styles.css">
+        <link rel="stylesheet" href="static/css/styles-shared.css">
+        <style>
+            :root {
+                --main-color: {{ data["colours"]["main-colour"] }};
+                --off-color: {{ data["colours"]["off-colour"] }};
+
+                --bg-color-1: {{ data["colours"]["bg-colour-1"] }};
+                --bg-color-2: {{ data["colours"]["bg-colour-2"] }};
+
+                --element-primary-solid: {{ data["colours"]["p-s-colour"] }};
+                --element-primary-transparent: {{ data["colours"]["p-t-colour"] }};
+                --element-primary-alt: {{ data["colours"]["p-a-colour"] }};
+
+                --element-secondary-solid: {{ data["colours"]["s-s-colour"] }};
+                --element-secondary-transparent: {{ data["colours"]["s-t-colour"] }};
+            }
+        </style>
         <link rel="icon" href="/static/assets/icons/favicon.ico" type="image/x-icon">
         <title>{{ data['pagename'] }}</title>
     </head>
-    <!--
-        <debug>
-            show_icons: {{ show_icons }}
-            show_banners: {{ show_banners }}
-            images_url {{ images_url }}
-            banners_url: {{ banners_url }}
-            icons_url: {{ icons_url }}
-            mode: {{ mode }}
-            notmode: {{ notmode }}
-        </debug>
-    -->
     <body>
 
         <script src="static/js/autoscroll.js"></script>
@@ -94,6 +99,7 @@
         {% endif %}
 
         <div class="segments">
+            <script src="static/js/mouseoverimage.js"></script>
             {% for segment in segments %}
                 <div class="container segment" id="segment-{{ segment }}">
                     <h3>{{ segments[segment]['title'] }}</h3>
@@ -104,7 +110,7 @@
                         <ul class="image-scroll" id="image-scroll">
                             {% for image in segments[segment]['images'] %}
                                 <li>
-                                    <img class="img-inactive" src="data:image/png;base64,{{ image }}">
+                                    <img class="img-inactive{% if loop.index == 1 %} selected-img{% endif %}" src="data:image/png;base64,{{ image }}">
                                 </li>
                             {% endfor %}
                         </ul>
@@ -114,16 +120,18 @@
                             {{ segments[segment]['text'] }}
                         </p>
                     </div>
-                    <ul class="{{ segment }}-links segment-links">
-                        {% for link in segments[segment]["links"] %}
-                            <li>
-                                <a href="{{ segments[segment]['links'][link] }}">
-                                    <span class="icon-container"></span>
-                                    <span>{{ link }}</span>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    <div class="container links-box">
+                        <ul class="{{ segment }}-links segment-links">
+                            {% for link in segments[segment]["links"] %}
+                                <li>
+                                    <a href="{{ segments[segment]['links'][link] }}">
+                                        <span class="icon-container"></span>
+                                        <span>{{ link }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             {% endfor %}
         </div>

@@ -11,6 +11,10 @@ carterapi_baseurl = "http://127.0.0.1:5000/"
 
 @app.route("/")
 def index():
+    mode = request.args.get("mode")
+    if not mode:
+        mode = "dark"
+
     # Data to send in the request body
     request_data = {
     }
@@ -22,6 +26,8 @@ def index():
 
     response = requests.post(f"{carterapi_baseurl}/get/portfolio-config", headers=headers, json=request_data)
     data = response.json()["data"]
+
+    data["colours"] = data["colours"][mode]
 
     favicon_data = base64.b64decode(data["favicon"])
 
@@ -42,10 +48,6 @@ def index():
 
     show_icons = True
     show_banners = True
-
-    mode = request.args.get("mode")
-    if not mode:
-        mode = "dark"
 
     if mode == "dark":
         notmode = "light"

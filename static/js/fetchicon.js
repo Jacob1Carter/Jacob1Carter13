@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var links = document.querySelectorAll('.contact-links li');
+    var links = document.querySelectorAll('.contact-links li, .segment-links li');
 
     links.forEach(function(linkItem) {
         var link = linkItem.querySelector('a');

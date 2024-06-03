@@ -1,5 +1,6 @@
+
 * {
-    color: #FFFFFF;
+    color: var(--off-color);
 }
 
 button:focus,
@@ -10,9 +11,8 @@ button:focus:active {
 }
 
 body {
-    margin: 0px;
-    background: linear-gradient(to bottom, #9da3a8, #4d5256);
-    background-repeat: no-repeat;
+    margin: 0;
+    background: linear-gradient(to bottom, var(--bg-color-1), var(--bg-color-2)) no-repeat;
 }
 
 .container {
@@ -21,20 +21,18 @@ body {
 
 .navbar {
     display: flex;
-    margin: 15px;
     width: calc(100% - 30px);
-    background-color: #4d5256;
     border-radius: 10px;
     padding: 10px;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 0px;
-
+    margin: 15px 15px 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
 
+    background-color: var(--element-primary-solid);
 }
 
 .navbar-link {
@@ -45,17 +43,18 @@ body {
 }
 
 .nav-first {
-    border-left: 1px solid #FFFFFF;
-    border-right: 1px solid #FFFFFF;
+    border-left: 1px solid var(--off-color);
+    border-right: 1px solid var(--off-color);
 }
 
 .nav-after {
-    border-right: 1px solid #FFFFFF;
+    border-right: 1px solid var(--off-color);
 }
 
 .navbar-link:hover {
-    background-color: #7d7276;
     text-decoration: none;
+
+    background-color: var(--element-primary-alt);
 }
 
 .navbar-link h7 {
@@ -68,15 +67,9 @@ body {
     height: 15px;
 }
 
-.vertical-break {
-    width: 1px;
-    background-color: #FFFFFF;
-    height: 35px;
-}
-
 .vertical-break-bold {
     width: 2px;
-    background-color: #FFFFFF;
+    background-color: var(--off-color);
     height: 45px;
     margin-left: 15px;
     margin-right: 45px;
@@ -91,37 +84,40 @@ body {
     float: right;
     width: 24px;
     height: 24px;
-    fill: #FFFFFF;
+    fill: var(--off-color);
 }
 
 .title-box {
     margin-top: 95px;
     padding: 15px;
-    background-color: rgba(225, 225, 225, 0.5);
     border-radius: 20px;
     max-width: 960px;
+
+    background-color: var(--element-primary-transparent);
 }
 
 .contact-box {
     border-radius: 20px;
-    background-color: #898989;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    background-color: var(--element-secondary-solid);
 }
 
-.contact-links {
+.contact-links, .segment-links {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: #898989;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     scrollbar-width: thin;
-    scrollbar-color: #999999 transparent;
-    padding: 0px;
-    margin: 0px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+
+    scrollbar-color: var(--element-primary-solid);
 }
 
 .has-scrollbar {
@@ -133,13 +129,18 @@ body {
 }
 
 .contact-links li {
-    background-color: #7d7276;
     list-style-type: none;
     margin-right: 15px;
     margin-left: 5px;
     text-decoration: none;
     padding: 5px;
     border-radius: 20px;
+
+    background-color: var(--element-primary-solid);
+}
+
+.contact-links li:hover {
+    background-color: var(--element-primary-alt);
 }
 
 .contact-links li a {
@@ -151,10 +152,6 @@ body {
 
 .contact-links li a:hover span {
     text-decoration: none;
-}
-
-.contact-links li:hover {
-    background-color: #4d5256;
 }
 
 .contact-links li a span svg, .contact-links li a span img {
@@ -184,15 +181,14 @@ body {
 .banner-indicators {
     position: relative;
     display: flex;
-    padding: 0px;
     flex-direction: row;
-    margin: 0px;
+    margin: 0;
     width: 100%;
     height: 5%;
     justify-content: flex-end;
     align-items: center;
     top: -20px;
-    padding-right: 10px;
+    padding: 0 10px 0 0;
 }
 
 .banner-imgs li {
@@ -209,11 +205,11 @@ body {
 .indicator {
     width: 10px;
     height: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--off-color);
 }
 
 .indicator-active {
-    background-color: #343434;
+    background-color: var(--main-color);
 }
 
 .banner {
@@ -231,7 +227,8 @@ body {
     margin-right: auto;
     margin-left: auto;
     margin-top: 15px;
-    background-color: rgba(225, 225, 225, 0.5);
+
+    background-color: var(--element-secondary-transparent);
 }
 
 .image-group {
@@ -251,10 +248,11 @@ body {
     float: right;
     display: flex;
     flex-direction: row;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    background-color: #4d5256;;
+
+    background-color: var(--element-primary-solid);
 }
 
 .image-scroll li {
@@ -262,16 +260,63 @@ body {
 }
 
 .image-scroll li img {
-    max-height: 30px;
+    max-height: 35px;
     width: auto;
+
+    border: var(--main-color);
+}
+
+.selected-img {
+    border: var(--off-color);
 }
 
 .segment-text {
     overflow-wrap: break-word;
 }
 
+.links-box {
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background-color: var(--element-secondary-solid);
+}
+
+.segment-links li {
+    list-style-type: none;
+    margin-right: 15px;
+    margin-left: 5px;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 20px;
+
+    background-color: var(--element-primary-solid);
+}
+
+.segment-links li:hover {
+    background-color: var(--element-primary-alt);
+}
+
+.segment-links li a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.segment-links li a:hover span {
+    text-decoration: none;
+}
+
+.segment-links li a span svg, .segment-links li a span img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
 .footer {
     width: 100%;
     height: 100px;
-    background-color: #4d5256;
+
+    background-color: var(--element-primary-solid);
 }

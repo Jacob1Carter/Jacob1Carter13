@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // JavaScript code to detect scrollbar and add class
-    const contactLinks = document.querySelector('.contact-links');
+    const contactLinks = document.querySelector('.contact-links li, .segment-links li');
 
     function checkScrollbar() {
         if (contactLinks.scrollWidth > contactLinks.clientWidth) {
