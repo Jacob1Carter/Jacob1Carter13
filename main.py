@@ -9,7 +9,7 @@ app.url_map.strict_slashes = False
 carterapi_baseurl = "http://127.0.0.1:5000/"
 
 HEADERS = {
-        'x-api-key': "i0l765RJ30f9HR47L072c2tc74V1597h",
+        'x-api-key': "TM8VU197H9lIC85HKJ53629Qd6k8470w",
         'Content-Type': 'application/json'
     }
 
@@ -26,6 +26,15 @@ def index():
 
     try:
         response = requests.post(f"{carterapi_baseurl}/get/portfolio-config", headers=HEADERS, json=request_data)
+        try:
+            response.json()
+        except requests.exceptions.JSONDecodeError as e:
+            return "API response error. Please try again later.<br><br>" + str(response) + "<br><br>" + str(e)
+        if response.json()["result"] == "failed":
+            if response.json()["error"] == "Unauthorized":
+                return "Unauthorized. Please try again later.<br><br>" + str(response.json())
+            else:
+                return "API error. Please try again later.<br><br>" + str(response.json())
     except requests.exceptions.ConnectionError as e:
         return "API inaccessible. Please try again later.<br><br>" + str(e)
     else:
