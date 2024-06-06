@@ -9,9 +9,9 @@ app.url_map.strict_slashes = False
 carterapi_baseurl = "http://127.0.0.1:5000/"
 
 HEADERS = {
-        'x-api-key': "TM8VU197H9lIC85HKJ53629Qd6k8470w",
-        'Content-Type': 'application/json'
-    }
+    'x-api-key': "TM8VU197H9lIC85HKJ53629Qd6k8470w",
+    'Content-Type': 'application/json'
+}
 
 
 @app.route("/")
